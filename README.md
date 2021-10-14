@@ -1,2 +1,3 @@
 # rust-learning
-Links to blog, translates for learning rust
+
+- [String和&str的区别](String_vs_&str.md)
