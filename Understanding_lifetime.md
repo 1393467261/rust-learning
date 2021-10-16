@@ -170,5 +170,5 @@ fn main() {
 ```
 在这个版本中，编译器推断出`my_txt`在`println!()`后便不再使用了，即借用结束了，可以进行修改操作。
 ## 对比其他语言
-如果你熟悉java或Objective-C，你也许想知道为什么在rust中需要处理lifetime。这很好解释。java通过GC避免了`Use after free`问题，只要有任何变量指向`String`，就不会被回收。Objective-C则是通过引用计数解决此问题。在我们的例子中，有两个引用-一个是`text`本身，一个是`my_txt`，当引用计数为0时，也就是`text`和`my_txt`都不再使用时，`String`才会被回收。
+如果你熟悉java或Objective-C，你也许想知道为什么在rust中才有lifetime。这很好解释。java通过GC避免了`Use after free`问题，只要有任何变量指向`String`，就不会被回收。Objective-C则是通过引用计数解决此问题。在我们的例子中，有两个引用-一个是`text`本身，一个是`my_txt`，当引用计数为0时，也就是`text`和`my_txt`都不再使用时，`String`才会被回收。
 GC的runtime一般不会很轻量，有时还会导致'整个世界'处于暂停状态。引用计数会产生额外的负载，并且不能保证100%可靠。rust的lifetime则是优雅地解决了内存回收问题，完全不借助任何runtime。
