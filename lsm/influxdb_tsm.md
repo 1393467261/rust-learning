@@ -22,3 +22,19 @@
 - 删除tag key
 - 删除tag value
 - 添加series
+
+## log file
+#### 基本数据结构
+```
+LogFile {
+  ms: map[string]Measurement
+}
+
+Measurement {
+  keys: map[string]TagKey
+}
+
+TagKey {
+  values: List<String>
+}
+```
