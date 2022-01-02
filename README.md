@@ -1,4 +1,4 @@
-# Blogs for learning rust
+# Blogs for learning rust 
 
 | Date | Title | 中文翻译 |
 |-|-|-|
